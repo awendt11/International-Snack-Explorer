@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Explore Snacks</title>
+    <link rel="stylesheet" href="css/styling.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">International Snack Explorer</div>
+        <ul class="nav-links">
+            <li><a href="internationalsnackexplorer.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a class="active" href="explore.html">Explore Snacks</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="page-title">Top Snacks by Country</h1>
+
+    <main class="explore-container">
+
+        <section class="section-block">
+            <h2 id="country-title">Select a country to begin.</h2>
+            <p id="country-description">
+                This page shows the top 5 most-scanned snacks or drinks from your selected country,
+                based on barcode scan data from the Open Food Facts API.
+            </p>
+        </section>
+
+        <section class="section-block">
+            <h2>Results</h2>
+
+            <div id="results-container">
+                <p class="placeholder-text">No country selected yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        International Snack Explorer — 2025
+    </footer>
+
+    <script src="js/explore.js"></script>
+</body>
+</html>

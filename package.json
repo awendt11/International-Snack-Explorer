@@ -1,0 +1,15 @@
+{
+  "name": "international-snack-explorer",
+  "version": "1.0.0",
+  "description": "Backend API for International Snack Explorer using Supabase + Express",
+  "main": "api/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.6",
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  }
+}

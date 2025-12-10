@@ -1,0 +1,74 @@
+body {font-family: Arial, sans-serif;
+    background-color: #e8d4ff; 
+    margin: 0;
+    padding: 0;}
+
+.navbar {background-color: #9bbf9b;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+.nav-left {font-size: 22px;
+    font-weight: bold;
+    color: white;}
+.nav-links {list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;}
+.nav-links a {text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;}
+.nav-links a:hover {text-decoration: underline;}
+
+.page-title {text-align: center;
+    margin-top: 20px;
+    font-size: 32px;}
+
+.section-block {background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 8px;}
+
+.home-container {width: 90%;
+    margin: auto;}
+
+.country-select-container {margin-top: 15px;}
+
+.dropdown {padding: 10px;
+    font-size: 16px;}
+
+.go-button {padding: 10px 15px;
+    background-color: #9bbf9b;
+    color: white;
+    border: none;
+    cursor: pointer;}
+
+.go-button:hover {opacity: 0.85;}
+
+.explore-container {width: 90%;
+    margin: auto;}
+
+.placeholder-text {color: #444;
+    font-style: italic;}
+
+.snack-card {background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;}
+
+.about-container {width: 90%;
+    margin: auto;}
+
+.footer {text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background-color: #9bbf9b;
+    color: white;}
+
+
+
