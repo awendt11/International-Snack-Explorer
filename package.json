@@ -1,15 +1,28 @@
 {
   "name": "international-snack-explorer",
   "version": "1.0.0",
-  "description": "Backend API for International Snack Explorer using Supabase + Express",
-  "main": "api/index.js",
-  "type": "module",
+  "description": "Supabase for International Snack Explorer Project",
+  "homepage": "https://github.com/awendt11/International-Snack-Explorer#readme",
+  "bugs": {
+    "url": "https://github.com/awendt11/International-Snack-Explorer/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/awendt11/International-Snack-Explorer.git"
+  },
+  "license": "ISC",
+  "author": "Anna Wendt",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "start": "node api/index.js"
+    "start": "nodemon -e '*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.6",
-    "express": "^4.19.2",
-    "cors": "^2.8.5"
+    "@supabase/supabase-js": "^2.87.3",
+    "body-parser": "^2.2.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.11",
+    "usa-state-validator": "^1.0.6"
   }
 }
