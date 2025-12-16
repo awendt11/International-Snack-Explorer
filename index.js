@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 // Initialize Supabase Client
-const supabaseUrl = 'https://lsyvuvbdyerkgddupcwe.supabase.co';
-const supabaseKey = 'sb_publishable_VMPdo3soaPD0FllUcu8lTQ_L6EDJB3N';
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = supabaseClient.createClient(supabaseUrl, supabaseKey);
 
 app.get('/', (req, res) => {
