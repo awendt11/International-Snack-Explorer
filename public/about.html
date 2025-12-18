@@ -95,5 +95,29 @@
 
     <script src="js/about.js"></script>
 </body>
+
+<section class="section-block">
+    <h2>Join Our Global Snack Community!</h2>
+
+    <form onsubmit="createCustomer(); return false;">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName">
+        <br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName">
+        <br>
+
+        <label for="state">State (2-letters):</label>
+        <input type="text" id="state" maxlength="2">
+        <br><br>
+
+        <input type="submit" name="Add Customer" value="Add Customer">
+    </form>
+    <div id="customerTableContainer"></div>
+</section>
+
+<script src="js/Customers.js" defer></script>
+
 </html>
 
