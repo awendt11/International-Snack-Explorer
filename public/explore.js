@@ -1,4 +1,4 @@
-const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search); 
 const country = params.get("country");
 
 const countryTitle = document.getElementById("country-title");
@@ -11,6 +11,7 @@ if (!country) {
 }
 
 countryTitle.textContent = `Top Snacks in ${country.replace("_", " ").toUpperCase()}`;
+
 async function loadSnacks() {
     const url = `https://world.openfoodfacts.org/api/v2/search?countries_tags=${country}&categories_tags=foods&sort_by=unique_scans_n&fields=product_name,brands,unique_scans_n,image_front_small_url,allergens_tags,ingredients_analysis_tags&page_size=5`;
 
@@ -18,7 +19,7 @@ async function loadSnacks() {
         const response = await fetch(url);
         const data = await response.json();
 
-        console.log(data); 
+        console.log(data);
 
         if (!data.products || data.products.length === 0) {
             resultsContainer.innerHTML = "<p>No results found for this country.</p>";
@@ -26,6 +27,8 @@ async function loadSnacks() {
         }
 
         displaySnacks(data.products);
+        buildChart(data.products);        
+        buildSlider(data.products);       
 
     } catch (error) {
         console.error("Error fetching data:", error);
@@ -34,7 +37,7 @@ async function loadSnacks() {
 }
 
 function displaySnacks(snacks) {
-    resultsContainer.innerHTML = ""; 
+    resultsContainer.innerHTML = "";
 
     snacks.forEach((snack, index) => {
         const name = snack.product_name || "Unknown product name";
@@ -66,4 +69,53 @@ function displaySnacks(snacks) {
     });
 }
 
+function buildChart(snacks) {
+    const labels = snacks.map(s => s.product_name || "Unknown");
+    const scanCounts = snacks.map(s => s.unique_scans_n || 0);
+
+    const ctx = document.getElementById("popularityChart").getContext("2d");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "Popularity (barcode scans)",
+                data: scanCounts,
+                backgroundColor: "rgba(153, 102, 255, 0.6)"
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
+function buildSlider(snacks) {
+    const sliderTrack = document.querySelector(".glider-track");
+    sliderTrack.innerHTML = "";
+
+    snacks.forEach(snack => {
+        const img = snack.image_front_small_url || "https://via.placeholder.com/150";
+        const slide = document.createElement("div");
+        slide.innerHTML = `<img src="${img}" class="slider-img">`;
+        sliderTrack.appendChild(slide);
+    });
+
+    new Glider(document.querySelector('.glider'), {
+        slidesToShow: 1,
+        dots: '#dots',
+        draggable: true,
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+    });
+}
+
 loadSnacks();
+
+
